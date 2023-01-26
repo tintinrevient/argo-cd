@@ -94,6 +94,8 @@ redis                             7.0.7-alpine    26b875a60c63   2 weeks ago    
 ghcr.io/dexidp/dex                v2.35.3         0dcae8edf686   3 months ago    90.3MB
 ```
 
+2. Remove the example app images by `docker rmi $(docker images | grep weaveworksdemos | tr -s ' ' | cut -d ' ' -f 3)`.
+
 ## References
 
 * https://argo-cd.readthedocs.io/en/stable/developer-guide/running-locally/
@@ -104,6 +106,7 @@ ghcr.io/dexidp/dex                v2.35.3         0dcae8edf686   3 months ago   
 * https://microservices-demo.github.io/docs/quickstart.html
 * https://github.com/argoproj/argo-helm
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+* https://docs.docker.com/config/pruning/
 
 ## Community
 
