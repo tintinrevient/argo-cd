@@ -76,12 +76,12 @@ qFmxbSUvjDblJ4mW
 
 6. Deploy the example application `sock-shop` from https://github.com/argoproj/argocd-example-apps in the dashboard:
 <p float="left">
-  <img src="pix/sock-shop-app-config.png" width="500" />
+  <img src="pix/sock-shop-app-config.png" width="600" />
 </p>
 
 7. Check the overview of the application `sock-shop` in the dashboard:
 <p float="left">
-  <img src="pix/sock-shop-app-overview.png" width="500" />
+  <img src="pix/sock-shop-app-overview.png" width="800" />
 </p>
 
 ## References
