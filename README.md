@@ -84,6 +84,17 @@ qFmxbSUvjDblJ4mW
   <img src="pix/sock-shop-app-overview.png" width="850" />
 </p>
 
+<ins>The things to pay attention to are as below</ins>:
+
+1. The images pulled for `argocd` are as below:
+```bash
+REPOSITORY                                                TAG                                                                          IMAGE ID       CREATED         SIZE
+quay.io/argoproj/argocd                                   v2.5.8                                                                       ea3fb8e9ac54   17 hours ago    369MB
+redis                                                     7.0.7-alpine                                                                 26b875a60c63   2 weeks ago     29.9MB
+ghcr.io/dexidp/dex                                        v2.35.3                                                                      0dcae8edf686   3 months ago    90.3MB
+```
+
+
 ## References
 
 * https://argo-cd.readthedocs.io/en/stable/developer-guide/running-locally/
