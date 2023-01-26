@@ -36,6 +36,65 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 To learn more about Argo CD [go to the complete documentation](https://argo-cd.readthedocs.io/).
 Check live demo at https://cd.apps.argoproj.io/.
 
+## Demo
+
+1. Create the namespace `argocd`:
+```bash
+kubectl create namespace argocd
+```
+
+2. Install `argocd` resources in Kubernetes:
+```bash
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+3. Ensure that all the resources are up and running:
+```bash
+kubectl get pods -n argocd
+
+NAME                                                READY   STATUS    RESTARTS     AGE
+argocd-application-controller-0                     1/1     Running   0            9h
+argocd-applicationset-controller-7c86dd8cd7-hq2c4   1/1     Running   0            9h
+argocd-dex-server-786fb4b8b-nrj4t                   1/1     Running   0            9h
+argocd-notifications-controller-7c946895bb-lcj5v    1/1     Running   0            9h
+argocd-redis-598f75bc69-pcvhh                       1/1     Running   0            9h
+argocd-repo-server-648db4756c-ds62c                 1/1     Running   3 (8h ago)   9h
+argocd-server-6cfb678659-kmmrc                      1/1     Running   2 (8h ago)   9h
+```
+
+4. Configure `port-forward` to `argocd` dashboard:
+```bash
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+5. Log into the dashboard - https://localhost:8080, with username `admin` and password retrieved as below:
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+qFmxbSUvjDblJ4mW
+```
+
+6. Deploy the example application `sock-shop` from https://github.com/argoproj/argocd-example-apps in the dashboard:
+<p float="left">
+  <img src="pix/sock-shop-app-config" width="500" />
+</p>
+
+7. Check the overview of the application `sock-shop` in the dashboard:
+<p float="left">
+  <img src="pix/sock-shop-app-overview" width="500" />
+</p>
+
+## References
+
+* https://argo-cd.readthedocs.io/en/stable/developer-guide/running-locally/
+* https://github.com/argoproj/argo-cd/blob/master/docs/developer-guide/running-locally.md
+* https://argoproj.github.io/argo-workflows/quick-start/
+* https://github.com/argoproj/argo-workflows/
+* https://github.com/argoproj/argocd-example-apps
+* https://microservices-demo.github.io/docs/quickstart.html
+* https://github.com/argoproj/argo-helm
+* https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
 ## Community
 
 ### Contribution, Discussion and Support
