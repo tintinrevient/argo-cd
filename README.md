@@ -67,7 +67,7 @@ argocd-server-6cfb678659-kmmrc                      1/1     Running   2 (8h ago)
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-4. Instead of port-forwarding, you can also patch the service of `argocd-server` as below:
+4. Instead of port forwarding, you can also patch the service of `argocd-server` from type `ClusterIP` to type `LoadBalancer` as below:
 ```bash
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
