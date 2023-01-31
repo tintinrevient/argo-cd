@@ -62,12 +62,12 @@ argocd-repo-server-648db4756c-ds62c                 1/1     Running   3 (8h ago)
 argocd-server-6cfb678659-kmmrc                      1/1     Running   2 (8h ago)   9h
 ```
 
-4.1 Configure `port-forward` to `argocd` dashboard:
+4. Configure `port-forward` to `argocd` dashboard:
 ```bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-4.2 Instead of port-forwarding, you can also patch the service of `argocd-server` as below:
+4. Instead of port-forwarding, you can also patch the service of `argocd-server` as below:
 ```bash
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
