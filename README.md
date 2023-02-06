@@ -112,6 +112,7 @@ ghcr.io/dexidp/dex                v2.35.3         0dcae8edf686   3 months ago   
 * https://github.com/argoproj/argo-helm
 * https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 * https://docs.docker.com/config/pruning/
+* https://github.com/argoproj/argo-helm
 
 ## Community
 
